@@ -1,0 +1,9 @@
+# Java compiled files
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+
+# build folders
+out/
