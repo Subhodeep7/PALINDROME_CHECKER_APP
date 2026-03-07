@@ -4,15 +4,14 @@ class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // UC1: Application Entry & Welcome Message
+        // UC1: Welcome Message
         System.out.println("=================================");
         System.out.println("        PALINDROME CHECKER       ");
         System.out.println("=================================");
         System.out.println("Application Version: 1.0");
-        System.out.println("Welcome to the Palindrome Checker App!");
         System.out.println();
 
-        // UC2: Hardcoded Palindrome Check (two pointer method)
+        // UC2: Hardcoded palindrome (two-pointer)
         String input = "madam";
         int n = input.length();
         boolean isPalindrome = true;
@@ -29,20 +28,35 @@ class PalindromeCheckerApp {
         System.out.println("Is it a palindrome? : " + isPalindrome);
         System.out.println();
 
-        // UC3: Palindrome check using reverse string
+        // UC3: Reverse string method
         String rev = "";
-
         for (int i = n - 1; i >= 0; i--) {
             rev += input.charAt(i);
         }
 
         System.out.println("UC3 Result:");
-
         if (rev.equals(input)) {
             System.out.println("Palindrome String");
         } else {
             System.out.println("Not a Palindrome String");
         }
+        System.out.println();
 
+        // UC4: Character Array Based Palindrome Check
+        String input2 = "radar";
+        char[] chars = input2.toCharArray();
+        int start = 0, end = chars.length - 1;
+        boolean isPalindromeArray = true;
+
+        while (start < end) {
+            if (chars[start++] != chars[end--]) {
+                isPalindromeArray = false;
+                break;
+            }
+        }
+
+        System.out.println("UC4 Result:");
+        System.out.println("Input text: " + input2);
+        System.out.println("Is it a palindrome? : " + isPalindromeArray);
     }
 }
