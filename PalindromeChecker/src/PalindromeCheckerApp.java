@@ -126,5 +126,35 @@ class PalindromeCheckerApp {
         System.out.println("UC7 Result:");
         System.out.println("Input text: " + input5);
         System.out.println("Is it a palindrome? : " + isPalindromeDeque);
+
+
+        // UC8: Linked List Based Palindrome Check
+        String input6 = "madam";
+
+        LinkedList<Character> list = new LinkedList<>();
+
+        for (char c : input6.toCharArray()) {
+            list.add(c);
+        }
+
+        boolean isPalindromeLinkedList = true;
+
+        int left = 0;
+        int right = list.size() - 1;
+
+        while (left < right) {
+            if (!list.get(left).equals(list.get(right))) {
+                isPalindromeLinkedList = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+
+        System.out.println("UC8 Result:");
+        System.out.println("Input text: " + input6);
+        System.out.println("Is it a palindrome? : " + isPalindromeLinkedList);
+
+        
     }
 }
