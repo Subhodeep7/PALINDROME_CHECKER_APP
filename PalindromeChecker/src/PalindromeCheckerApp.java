@@ -186,5 +186,30 @@ class PalindromeCheckerApp {
         System.out.println("UC10 Result:");
         System.out.println("Input text: " + input8);
         System.out.println("Is it a palindrome? : " + isPalindromeNormalized);
+
+        // UC11
+        PalindromeService service = new PalindromeService();
+
+        String input9 = "radar";
+
+        System.out.println("UC11 Result:");
+        System.out.println("Input text: " + input9);
+        System.out.println("Is it a palindrome? : " + service.checkPalindrome(input9));
+    }
+}
+
+class PalindromeService {
+
+    boolean checkPalindrome(String input) {
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            if (input.charAt(start++) != input.charAt(end--)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
