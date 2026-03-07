@@ -80,5 +80,29 @@ class PalindromeCheckerApp {
         System.out.println("UC5 Result:");
         System.out.println("Input text: " + input3);
         System.out.println("Is it a palindrome? : " + isPalindromeStack);
+
+        // UC6: Queue + Stack Based Palindrome Check
+        String input4 = "level";
+
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack2 = new Stack<>();
+
+        for (char c : input4.toCharArray()) {
+            queue.add(c);     // enqueue
+            stack2.push(c);   // push
+        }
+
+        boolean isPalindromeQueueStack = true;
+
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stack2.pop())) {
+                isPalindromeQueueStack = false;
+                break;
+            }
+        }
+
+        System.out.println("UC6 Result:");
+        System.out.println("Input text: " + input4);
+        System.out.println("Is it a palindrome? : " + isPalindromeQueueStack);
     }
 }
