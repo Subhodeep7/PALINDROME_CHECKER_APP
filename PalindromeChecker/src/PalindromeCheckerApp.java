@@ -58,5 +58,27 @@ class PalindromeCheckerApp {
         System.out.println("UC4 Result:");
         System.out.println("Input text: " + input2);
         System.out.println("Is it a palindrome? : " + isPalindromeArray);
+        System.out.println();
+
+        // UC5: Stack Based Palindrome Check
+        String input3 = "noon";
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : input3.toCharArray()) {
+            stack.push(c);
+        }
+
+        boolean isPalindromeStack = true;
+
+        for (char c : input3.toCharArray()) {
+            if (c != stack.pop()) {
+                isPalindromeStack = false;
+                break;
+            }
+        }
+
+        System.out.println("UC5 Result:");
+        System.out.println("Input text: " + input3);
+        System.out.println("Is it a palindrome? : " + isPalindromeStack);
     }
 }
