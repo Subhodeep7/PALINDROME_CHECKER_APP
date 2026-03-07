@@ -2,6 +2,16 @@ import java.util.*;
 
 class PalindromeCheckerApp {
 
+    static boolean recursivePalindrome(String str, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+        return recursivePalindrome(str, start + 1, end - 1);
+    }
+
     public static void main(String[] args) {
 
         // UC1: Welcome Message
@@ -155,6 +165,13 @@ class PalindromeCheckerApp {
         System.out.println("Input text: " + input6);
         System.out.println("Is it a palindrome? : " + isPalindromeLinkedList);
 
-        
+        // UC9: Recursive Palindrome
+        String input7 = "level";
+
+        boolean isPalindromeRecursive = recursivePalindrome(input7, 0, input7.length() - 1);
+
+        System.out.println("UC9 Result:");
+        System.out.println("Input text: " + input7);
+        System.out.println("Is it a palindrome? : " + isPalindromeRecursive);
     }
 }
