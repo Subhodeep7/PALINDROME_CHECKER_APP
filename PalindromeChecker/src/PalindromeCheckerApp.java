@@ -173,5 +173,18 @@ class PalindromeCheckerApp {
         System.out.println("UC9 Result:");
         System.out.println("Input text: " + input7);
         System.out.println("Is it a palindrome? : " + isPalindromeRecursive);
+
+        // UC10: Case insensitive + ignore spaces
+        String input8 = "A man a plan a canal Panama";
+
+        String normalized = input8.replaceAll("\\s+", "").toLowerCase();
+
+        String reversed = new StringBuilder(normalized).reverse().toString();
+
+        boolean isPalindromeNormalized = normalized.equals(reversed);
+
+        System.out.println("UC10 Result:");
+        System.out.println("Input text: " + input8);
+        System.out.println("Is it a palindrome? : " + isPalindromeNormalized);
     }
 }
