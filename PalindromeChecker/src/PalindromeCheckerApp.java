@@ -24,7 +24,18 @@ class PalindromeCheckerApp {
         System.out.println("UC12 Result:");
         System.out.println("Is 'level' palindrome? : " + strategy.check("level"));
 
-        
+        // UC13: Performance Comparison
+        String test = "racecar";
+
+        long startTime = System.nanoTime();
+
+        boolean result = strategy.check(test);
+
+        long endTime = System.nanoTime();
+
+        System.out.println("UC13 Result:");
+        System.out.println("Palindrome: " + result);
+        System.out.println("Execution Time: " + (endTime - startTime) + " ns");
     }
 }
 
