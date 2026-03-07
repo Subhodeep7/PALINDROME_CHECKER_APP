@@ -104,5 +104,27 @@ class PalindromeCheckerApp {
         System.out.println("UC6 Result:");
         System.out.println("Input text: " + input4);
         System.out.println("Is it a palindrome? : " + isPalindromeQueueStack);
+
+        // UC7: Deque Based Optimized Palindrome Check
+        String input5 = "racecar";
+
+        Deque<Character> deque = new LinkedList<>();
+
+        for (char c : input5.toCharArray()) {
+            deque.addLast(c);
+        }
+
+        boolean isPalindromeDeque = true;
+
+        while (deque.size() > 1) {
+            if (deque.removeFirst() != deque.removeLast()) {
+                isPalindromeDeque = false;
+                break;
+            }
+        }
+
+        System.out.println("UC7 Result:");
+        System.out.println("Input text: " + input5);
+        System.out.println("Is it a palindrome? : " + isPalindromeDeque);
     }
 }
